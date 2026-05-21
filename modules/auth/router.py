@@ -35,7 +35,6 @@ async def register(
     Создаёт учётную запись и сразу выдаёт пару токенов (access + refresh).
 
     - **409 Conflict** — email или username уже заняты.
-    - **422 Unprocessable Entity** — тело запроса не прошло валидацию (например, невалидный email).
     """
     return controller.register(body)
 
@@ -51,7 +50,6 @@ async def login(body: AuthLoginBody, controller: Annotated[AuthController, Depen
     Вход в систему по имени пользователя и паролю.
 
     - **401 Unauthorized** — пользователь не найден или пароль неверен.
-    - **422 Unprocessable Entity** — тело запроса не прошло валидацию.
     """
     return controller.login(body)
 
