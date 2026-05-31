@@ -13,4 +13,4 @@ class AuthLoginBody(BaseModel):
     """
 
     username: str
-    password: str = Field(exclude=True)
+    password: str = Field(exclude=True, min_length=8, max_length=32)
