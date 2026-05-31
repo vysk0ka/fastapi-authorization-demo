@@ -8,8 +8,6 @@
 from fastapi import FastAPI
 
 from modules.auth import router as auth_router
-from lifespan import lifespan
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 app.include_router(auth_router)
-
